@@ -1,0 +1,53 @@
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Python build/dist artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+*.manifest
+*.spec
+
+# ==============================
+# Manim
+# ==============================
+# Default media output (videos, images, etc.)
+**/media/**
+**/videos/**
+**/images/**
+**/Tex/**
+
+# Cache from manim CE
+.manim_cache/
+**/.manim_cache/
+
+# ==============================
+# Docker
+# ==============================
+# Ignore Docker build artifacts
+*.pid
+*.log
+tmp/
+.docker/
+docker-compose.override.yml
+# VS Code dev container intermediate files
+.vscode-server/
+.devcontainer/.cache/
+**/vsc-*/  # auto-generated devcontainer build dirs
+
+*/.cache/*
+*/.devcontainer/*
+*/.dotnet/*
+.bash_history
