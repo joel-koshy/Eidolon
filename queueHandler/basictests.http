@@ -1,0 +1,10 @@
+### Create a new prompt job
+POST http://0.0.0.0:8000/generate
+Content-Type: application/json
+
+{
+  "prompt": "Explain eigenvectors and eigenvalues in 3Blue1Brown style"
+}
+
+### Check job status
+GET http://localhost:8000/status/a1b2c3d4-e5f6-7g8h-9i10-jklmnop
