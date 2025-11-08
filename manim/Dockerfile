@@ -17,13 +17,6 @@ RUN tlmgr update --self
 RUN tlmgr install scheme-small txfonts
 
 # 6. Install Python dependencies (as root)
-RUN pip install \
-    "celery[redis]" \
-    google-generativeai \
-    boto3 \
-    psycopg2-binary
-
-# 7. Switch back to the default, non-privileged 'manim' user
-# This is a security best practice for the final running container
+COPY . /manim/
 CMD ["/bin/bash"]
 

@@ -35,3 +35,17 @@ services:
     depends_on:
       - backend
       - redis
+      - manim 
+    volumes:
+      - manim_shared:/shared
+
+  manim:
+    build: ./manim
+    container_name: manim-renderer
+    command: python -u watcher.py  
+    volumes:
+      - manim_shared:/shared 
+
+volumes:
+  manim_shared:
+
