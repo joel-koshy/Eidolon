@@ -48,6 +48,8 @@ docker-compose.override.yml
 **/vsc-*/  # auto-generated devcontainer build dirs
 
 */.cache/*
-*/.devcontainer/*
 */.dotnet/*
 .bash_history
+manim/.devcontainer/.onCreateCommandMarker
+manim/.devcontainer/.postCreateCommandMarker
+manim/.devcontainer/.updateContentCommandMarker

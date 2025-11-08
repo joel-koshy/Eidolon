@@ -1,0 +1,26 @@
+{
+    "name": "Manim Dev Environment",
+
+    // This tells VS Code how to build your image
+    "build": {
+        // Path from .devcontainer folder up to the root, then to Dockerfile
+        "dockerfile": "../Dockerfile",
+        // Build context is the root folder (one level up)
+        "context": ".."
+    },
+
+    // Tell VS Code which folder to open
+    "workspaceFolder": "/manim",
+
+    // Mount your project root directory into /manim
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/manim,type=bind,consistency=cached"
+    ],
+
+    // Automatically install the Python extension INSIDE the container
+    // "extensions": [
+    //     "ms-python.python"
+    // ],
+
+   "overrideCommand": true
+}
