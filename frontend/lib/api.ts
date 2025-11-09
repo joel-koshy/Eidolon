@@ -20,15 +20,18 @@ export async function generateVideo(prompt: string, files: File[]) {
   return response.json();
 }
 
-export async function getQueueStatus(videoId: string) {
-  const response = await fetch(`/api/queue-status/${videoId}`);
-  
+
+export async function getQueueStatus(videoId: string): Promise<string> {
+  const response = await fetch(`/api/video/${videoId}`);
+
   if (!response.ok) {
     throw new Error('Failed to get queue status');
   }
-  
-  return response.json();
+
+  const data = await response.json();
+  return data.status; // return only the status
 }
+
 
 export function getVideoUrl(videoId: string) {
   return `/api/video/${videoId}`;

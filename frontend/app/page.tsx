@@ -145,7 +145,7 @@ function Navbar({ navigateTo }: { navigateTo: (view: string) => void }) {
   const setCurrentVideoId = useStore((state) => state.setCurrentVideoId);
   const logout = useStore((state) => state.logout);
   const user = useStore((state) => state.user);
-
+  // @ts-ignore
   const setQueue = useStore((state) => state.setQueue);
 
   useEffect(() => {
@@ -183,17 +183,16 @@ function Navbar({ navigateTo }: { navigateTo: (view: string) => void }) {
 
   // Poll queue status
   useEffect(() => {
+    console.log('Starting queue status polling...');
     const interval = setInterval(async () => {
       for (const item of queue) {
         if (item.videoId && item.status !== 'complete' && item.status !== 'error') {
           try {
-            const status = await getQueueStatus(item.videoId);
+            const status = await getQueueStatus(item.id.toString());
             updateQueueItemStatus(
               item.id,
-              status.status,
-              status.progress,
-              status.message,
-              status.video_url
+              // @ts-ignore
+              status
             );
           } catch (error) {
             console.error('Failed to fetch status', error);

@@ -1,4 +1,4 @@
-import { Db, MongoClient } from 'mongodb';
+import { Db, MongoClient, ObjectId } from 'mongodb';
 
 // Ensure you have MONGODB_URI in your .env.local file
 const uri: string|undefined = process.env.MONGODB_URI;
@@ -76,12 +76,36 @@ export async function createVideoPrompt(promptData: createVideoPromptInput) {
     };
 
     const result = await collection.insertOne(documentToInsert);
-
+    
     // 4. (Optional) Revalidate a path if a page needs to show the new data
     // For example, if you have a dashboard at '/dashboard'
     // revalidatePath('/dashboard');
 
     console.log('Document-ID ' + result.insertedId + ' inserted in ' + collection.collectionName);
+    const backendUrl = process.env.BACKEND_API_URL;
+  if (!backendUrl) {
+    console.error("BACKEND_API_URL environment variable not defined");
+    return {
+      success: false,
+      error: "BACKEND_API_URL environment variable not defined"
+    };
+  }
+  console.log('Calling backend at ' + backendUrl + ' to generate video for prompt ID ' + result.insertedId);
+
+  const formData = new FormData();
+formData.append("id", result.insertedId.toString());
+formData.append("prompt", promptData.prompt);
+
+const response = await fetch(`${backendUrl}/generate`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    prompt: promptData.prompt,
+    id: result.insertedId.toString(),
+  }),
+});
 
     // 5. Return a success response
     return {
@@ -124,10 +148,15 @@ export async function getLatestPendingVideos(limit = 10) {
       .limit(limit)
       .toArray();
 
-    return {
-      success: true,
-      data: pendingDocs
-    };
+   const mappedDocs = pendingDocs.map((doc) => ({
+  ...doc,
+  id: doc._id.toString(), // convert ObjectId to string
+}));
+
+return {
+  success: true,
+  data: mappedDocs,
+}; 
   } catch (error) {
     console.error("Error fetching pending videos:", error);
     return {
@@ -137,3 +166,35 @@ export async function getLatestPendingVideos(limit = 10) {
   }
 }
 
+export async function getVideoById(id: string) {
+  let db;
+
+  try {
+    ({ db } = await connectToDb());
+  } catch (error) {
+    console.error("Database connection error:", error);
+    return {
+      success: false,
+      error: "Failed to connect to the database."
+    };
+  }
+
+
+
+  try {
+   const collection = db.collection("videos");
+
+    const objectId = new ObjectId(id);
+    const doc = await collection.findOne({ _id: objectId });
+
+    if (!doc) return null;
+
+    return {
+      ...doc,
+      id: doc._id.toString(), // map _id → id
+    };
+  } catch (error) {
+    console.error("Error fetching video by ID:", error);
+    throw error;
+  }
+}
