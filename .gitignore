@@ -34,6 +34,10 @@ dist/
 .manim_cache/
 **/.manim_cache/
 
+# Video improvement system
+manim/rendered_videos/
+manim/iterations/
+
 # ==============================
 # Docker
 # ==============================

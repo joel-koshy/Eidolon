@@ -1,0 +1,249 @@
+{
+  "overall_score": 0,
+  "is_satisfactory": false,
+  "analysis_type": "mobject_overlap_detection",
+  "total_overlaps": 15,
+  "critical_overlaps": 15,
+  "warning_overlaps": 0,
+  "minor_overlaps": 0,
+  "total_mobjects_analyzed": 0,
+  "issues_by_severity": {
+    "critical": [
+      {
+        "mobject1": "Text",
+        "mobject2": "Text",
+        "overlap_percentage": 100.0,
+        "timestamp": 46.999999999999105,
+        "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+      },
+      {
+        "mobject1": "Text",
+        "mobject2": "Text",
+        "overlap_percentage": 100.0,
+        "timestamp": 46.999999999999105,
+        "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+      },
+      {
+        "mobject1": "Text",
+        "mobject2": "Text",
+        "overlap_percentage": 100.0,
+        "timestamp": 48.999999999999105,
+        "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+      },
+      {
+        "mobject1": "Text",
+        "mobject2": "Text",
+        "overlap_percentage": 100.0,
+        "timestamp": 50.99999999999899,
+        "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+      },
+      {
+        "mobject1": "Text",
+        "mobject2": "Text",
+        "overlap_percentage": 100.0,
+        "timestamp": 50.99999999999899,
+        "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+      },
+      {
+        "mobject1": "Text",
+        "mobject2": "Text",
+        "overlap_percentage": 100.0,
+        "timestamp": 53.99999999999899,
+        "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+      },
+      {
+        "mobject1": "Text",
+        "mobject2": "Text",
+        "overlap_percentage": 100.0,
+        "timestamp": 55.99999999999888,
+        "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+      },
+      {
+        "mobject1": "Text",
+        "mobject2": "Text",
+        "overlap_percentage": 71.9,
+        "timestamp": 55.99999999999888,
+        "suggestion": "Move Text further down, or adjust vertical spacing"
+      },
+      {
+        "mobject1": "Text",
+        "mobject2": "Text",
+        "overlap_percentage": 68.4,
+        "timestamp": 55.99999999999888,
+        "suggestion": "Move Text further right, or use .next_to() with larger buff parameter"
+      },
+      {
+        "mobject1": "Text",
+        "mobject2": "Text",
+        "overlap_percentage": 100.0,
+        "timestamp": 55.99999999999888,
+        "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+      },
+      {
+        "mobject1": "Text",
+        "mobject2": "Text",
+        "overlap_percentage": 71.9,
+        "timestamp": 55.99999999999888,
+        "suggestion": "Move Text further down, or adjust vertical spacing"
+      },
+      {
+        "mobject1": "Text",
+        "mobject2": "Text",
+        "overlap_percentage": 68.4,
+        "timestamp": 55.99999999999888,
+        "suggestion": "Move Text further right, or use .next_to() with larger buff parameter"
+      },
+      {
+        "mobject1": "Text",
+        "mobject2": "Text",
+        "overlap_percentage": 100.0,
+        "timestamp": 58.99999999999888,
+        "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+      },
+      {
+        "mobject1": "Text",
+        "mobject2": "Text",
+        "overlap_percentage": 71.9,
+        "timestamp": 58.99999999999888,
+        "suggestion": "Move Text further down, or adjust vertical spacing"
+      },
+      {
+        "mobject1": "Text",
+        "mobject2": "Text",
+        "overlap_percentage": 68.4,
+        "timestamp": 58.99999999999888,
+        "suggestion": "Move Text further right, or use .next_to() with larger buff parameter"
+      }
+    ],
+    "warning": [],
+    "minor": []
+  },
+  "priority_improvements": [
+    "Move Text further left, or use .next_to() with larger buff parameter",
+    "Move Text further left, or use .next_to() with larger buff parameter",
+    "Move Text further left, or use .next_to() with larger buff parameter"
+  ],
+  "detailed_issues": [
+    {
+      "severity": "critical",
+      "mobject1": "Text",
+      "mobject2": "Text",
+      "overlap": "100.0%",
+      "timestamp": 46.999999999999105,
+      "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+    },
+    {
+      "severity": "critical",
+      "mobject1": "Text",
+      "mobject2": "Text",
+      "overlap": "100.0%",
+      "timestamp": 46.999999999999105,
+      "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+    },
+    {
+      "severity": "critical",
+      "mobject1": "Text",
+      "mobject2": "Text",
+      "overlap": "100.0%",
+      "timestamp": 48.999999999999105,
+      "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+    },
+    {
+      "severity": "critical",
+      "mobject1": "Text",
+      "mobject2": "Text",
+      "overlap": "100.0%",
+      "timestamp": 50.99999999999899,
+      "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+    },
+    {
+      "severity": "critical",
+      "mobject1": "Text",
+      "mobject2": "Text",
+      "overlap": "100.0%",
+      "timestamp": 50.99999999999899,
+      "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+    },
+    {
+      "severity": "critical",
+      "mobject1": "Text",
+      "mobject2": "Text",
+      "overlap": "100.0%",
+      "timestamp": 53.99999999999899,
+      "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+    },
+    {
+      "severity": "critical",
+      "mobject1": "Text",
+      "mobject2": "Text",
+      "overlap": "100.0%",
+      "timestamp": 55.99999999999888,
+      "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+    },
+    {
+      "severity": "critical",
+      "mobject1": "Text",
+      "mobject2": "Text",
+      "overlap": "71.9%",
+      "timestamp": 55.99999999999888,
+      "suggestion": "Move Text further down, or adjust vertical spacing"
+    },
+    {
+      "severity": "critical",
+      "mobject1": "Text",
+      "mobject2": "Text",
+      "overlap": "68.4%",
+      "timestamp": 55.99999999999888,
+      "suggestion": "Move Text further right, or use .next_to() with larger buff parameter"
+    },
+    {
+      "severity": "critical",
+      "mobject1": "Text",
+      "mobject2": "Text",
+      "overlap": "100.0%",
+      "timestamp": 55.99999999999888,
+      "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+    },
+    {
+      "severity": "critical",
+      "mobject1": "Text",
+      "mobject2": "Text",
+      "overlap": "71.9%",
+      "timestamp": 55.99999999999888,
+      "suggestion": "Move Text further down, or adjust vertical spacing"
+    },
+    {
+      "severity": "critical",
+      "mobject1": "Text",
+      "mobject2": "Text",
+      "overlap": "68.4%",
+      "timestamp": 55.99999999999888,
+      "suggestion": "Move Text further right, or use .next_to() with larger buff parameter"
+    },
+    {
+      "severity": "critical",
+      "mobject1": "Text",
+      "mobject2": "Text",
+      "overlap": "100.0%",
+      "timestamp": 58.99999999999888,
+      "suggestion": "Move Text further left, or use .next_to() with larger buff parameter"
+    },
+    {
+      "severity": "critical",
+      "mobject1": "Text",
+      "mobject2": "Text",
+      "overlap": "71.9%",
+      "timestamp": 58.99999999999888,
+      "suggestion": "Move Text further down, or adjust vertical spacing"
+    },
+    {
+      "severity": "critical",
+      "mobject1": "Text",
+      "mobject2": "Text",
+      "overlap": "68.4%",
+      "timestamp": 58.99999999999888,
+      "suggestion": "Move Text further right, or use .next_to() with larger buff parameter"
+    }
+  ],
+  "snapshots_analyzed": 9
+}

@@ -1,0 +1,23 @@
+*   [33m4a7f090[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32miter_improvs[m[33m)[m Merge remote-tracking branch 'origin/main' into iter_improvs
+[31m|[m[32m\[m  
+[31m|[m * [33m1a73bbe[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m incorporated manim stuff
+* [32m|[m [33m4d08f67[m Add new voiceover and cnn files before merging main
+* [32m|[m [33m90938f0[m[33m ([m[1;31morigin/iter_improvs[m[33m, [m[1;32miter_improvs_backup[m[33m)[m Updated files related to iteration cycles
+* [32m|[m [33mcf6526c[m[33m ([m[1;32mmain[m[33m)[m Merge branch 'main' of https://github.com/joel-koshy/Eidolon
+[33m|[m[32m\[m[32m|[m 
+[33m|[m *   [33m76d40f8[m Merge pull request #1 from joel-koshy/queueHandler
+[33m|[m [35m|[m[36m\[m  
+[33m|[m [35m|[m * [33mcd1bd73[m basic api backend handler
+[33m|[m [35m|[m[35m/[m  
+[33m|[m * [33mf40a1b5[m more changes idfk
+[33m|[m *   [33mf5e5d32[m Merge branch 'main' of https://github.com/joel-koshy/Eidolon
+[33m|[m [1;31m|[m[1;32m\[m  
+[33m|[m [1;31m|[m * [33m9544289[m Add complete Next.js frontend for Eidolon video generator with improved UI/UX
+[33m|[m * [1;32m|[m [33m8f378bd[m next js connection to mongodb
+[33m|[m * [1;32m|[m [33mbeaa3df[m queuehandler
+[33m|[m [1;32m|[m[1;32m/[m  
+* [1;32m/[m [33m5fba95e[m Update .gitignore
+[1;32m|[m[1;32m/[m  
+* [33m8fea56d[m frontend next js
+* [33m245ef90[m dev container
+* [33m31a284f[m Manim Container

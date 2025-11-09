@@ -1,0 +1,19 @@
+How do we find the exact area under this curve?
+
+So, let's *try* to fill this shape with rectangles.
+
+As you can see... it's not very good.
+
+But what if we use *more* rectangles?
+
+Let's keep going. We'll use more... and more...
+
+...our approximation becomes... *exact*.
+
+This process... is called integration.
+
+This symbol... is a stretched-out 'S', for 'Sum'.
+
+...and this dx represents the *infinitely thin* width...
+
+Integral = Exact Area.
