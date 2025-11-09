@@ -15,9 +15,10 @@ print(f"   Watching: {SCRIPTS_DIR}")
 print(f"   Output: {VIDEOS_DIR}")
 
 while True:
-    for script_file in SCRIPTS_DIR.glob("*.py"):
+    for script_file in SCRIPTS_DIR.glob("*.txt"):
         job_id = script_file.stem
         output_file = VIDEOS_DIR / f"{job_id}.mp4"
+        prompt = script_file.read_text()
 
         if not output_file.exists():
             print(f"🌀 Rendering {script_file.name} ...")

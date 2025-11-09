@@ -46,6 +46,10 @@ services:
     command: python -u watcher.py  
     volumes:
       - manim_shared:/shared 
+      - ./bucketkey.json:/app/keyfile.json:ro
+      - ./Manim:/manim
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/keyfile.json
 
 volumes:
   manim_shared:
