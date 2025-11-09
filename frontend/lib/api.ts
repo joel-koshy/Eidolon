@@ -1,14 +1,17 @@
-const API_BASE = 'http://localhost:8000';
+// const API_BASE = 'http://localhost:8000';
 
 export async function generateVideo(prompt: string, files: File[]) {
-  const formData = new FormData();
-  formData.append('prompt', prompt);
-  files.forEach(file => formData.append('files', file));
-  
-  const response = await fetch(`${API_BASE}/api/generate-video`, {
+    const response = await fetch('/api/generate-video', {
     method: 'POST',
-    body: formData,
-  });
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    prompt: prompt,
+    userid: 'example-user-id',
+  }),
+}
+  );
   
   if (!response.ok) {
     throw new Error('Failed to generate video');
@@ -17,22 +20,25 @@ export async function generateVideo(prompt: string, files: File[]) {
   return response.json();
 }
 
-export async function getQueueStatus(videoId: string) {
-  const response = await fetch(`${API_BASE}/api/queue-status/${videoId}`);
-  
+
+export async function getQueueStatus(videoId: string): Promise<string> {
+  const response = await fetch(`/api/video/${videoId}`);
+
   if (!response.ok) {
     throw new Error('Failed to get queue status');
   }
-  
-  return response.json();
+
+  const data = await response.json();
+  return data.status; // return only the status
 }
 
+
 export function getVideoUrl(videoId: string) {
-  return `${API_BASE}/api/video/${videoId}`;
+  return `/api/video/${videoId}`;
 }
 
 export async function sendChatMessage(videoId: string, message: string, history: any[]) {
-  const response = await fetch(`${API_BASE}/api/chat`, {
+  const response = await fetch(`/api/chat`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ video_id: videoId, message, history }),

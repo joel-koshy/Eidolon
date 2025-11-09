@@ -3,7 +3,8 @@ POST http://0.0.0.0:8000/generate
 Content-Type: application/json
 
 {
-  "prompt": "Explain eigenvectors and eigenvalues in 3Blue1Brown style"
+  "prompt": "Explain eigenvectors and eigenvalues in 3Blue1Brown style",
+  "id": "a1b2c3d4-e5f6-7g8h-9i10-jklmnop"
 }
 
 ### Check job status
