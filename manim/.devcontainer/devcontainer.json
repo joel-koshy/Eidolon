@@ -14,9 +14,12 @@
 
     // Mount your project root directory into /manim
     "mounts": [
-        "source=${localWorkspaceFolder},target=/manim,type=bind,consistency=cached"
+        "source=${localWorkspaceFolder},target=/manim,type=bind,consistency=cached", 
+        "source=${localWorkspaceFolder}/bucketkey.json,target=/app/keyfile.json,type=bind,consistency=cached,readonly"
     ],
-
+     "remoteEnv": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "/app/keyfile.json"
+    },
     // Automatically install the Python extension INSIDE the container
     // "extensions": [
     //     "ms-python.python"
