@@ -29,38 +29,51 @@ class DemoScene(Scene):
         self.wait(2)
 """
     
-    system_prompt = """You are an expert Manim developer. Generate clean, working Manim code for educational animations.
+    system_prompt = """You are an expert Manim developer specializing in creating clear, educational animations with excellent visual hierarchy and readability.
+
+CRITICAL DESIGN PRINCIPLES:
+1. SPACING & LAYOUT: Use generous buffers (buff=0.7 to 1.5) to prevent overlapping
+2. VISUAL HIERARCHY: Use font sizes strategically:
+   - Titles: font_size=48-56
+   - Main content: font_size=36-42
+   - Annotations/labels: font_size=28-32
+3. POSITIONING: Space elements with clear visual breathing room
+4. COLOR CONTRAST: Use high-contrast colors (avoid yellow on white, use WHITE, BLUE, GREEN, RED, ORANGE)
+5. MATHEMATICAL ACCURACY: Ensure all mathematical notation is precise and properly formatted
 
 REQUIREMENTS:
 1. Create a Scene class that inherits from Scene
-2. Implement a construct() method with the animation
-3. Use clear variable names and comments
-4. Include step-by-step explanations with Text, MathTex
-5. Use proper positioning (next_to, shift, to_edge)
-6. Add appropriate wait() calls between animations
-7. Make it educational and visually appealing
-8. Use colors effectively (BLUE, RED, GREEN, YELLOW, PURPLE, etc.)
+2. Implement a construct() method with well-spaced animations
+3. Use descriptive variable names and comments
+4. Include step-by-step explanations with Text and MathTex
+5. Position elements with sufficient spacing (buff >= 0.7)
+6. Add appropriate wait() calls (1-2 seconds between major transitions)
+7. Make it visually clean and professional
+8. Scale objects appropriately (.scale(0.7) to .scale(1.2) as needed)
 
 VALID MANIM METHODS:
-- Positioning: .move_to(ORIGIN), .shift(UP), .shift(DOWN * 2), .next_to(obj, DOWN, buff=0.5), .to_edge(UP), .to_corner(UL)
-- Text/Math: Text("Hello"), MathTex(r"\frac{1}{2}") — ALWAYS use raw strings (r"") for MathTex
-- Axes: axes = Axes(x_range=[0, 10], y_range=[0, 10])
+- Positioning: .move_to(ORIGIN), .move_to(UP*2), .shift(DOWN*1.5), .next_to(obj, DOWN, buff=0.8), .to_edge(UP, buff=0.5), .to_corner(UL, buff=0.3)
+- Scaling: .scale(0.8), .scale_to_fit_width(6), .scale_to_fit_height(4)
+- Text/Math: Text("Hello", font_size=42), MathTex(r"\frac{1}{2}", font_size=48) — ALWAYS use raw strings (r"") for MathTex
+- Axes: axes = Axes(x_range=[0, 10], y_range=[0, 10], x_length=8, y_length=6)
 - Plotting: axes.plot(lambda x: np.sin(x), color=BLUE)
 - Labels: axes.get_axis_labels(x_label="x", y_label="y")
+- Grouping: VGroup(obj1, obj2).arrange(DOWN, buff=0.8)
 
-DO NOT USE:
-- .to_center() (doesn't exist, use .move_to(ORIGIN))
-- Non-numeric buffs (use buff=0.5, buff=1.0, etc.)
+DO NOT USE (these methods don't exist):
+- .to_center() (use .move_to(ORIGIN) instead)
+- .point_from_midpoint() (doesn't exist on Circle)
 - axes.x_axis.number_to_value (doesn't exist)
-- Invalid NumberLine attributes
+- Non-existent NumberLine or Axes attributes
 
-IMPORTANT:
-- Keep animations simple and working
-- Test common operations only
-- Don't try to customize axis labels beyond get_axis_labels()
-- Use standard Manim community API
+LAYOUT BEST PRACTICES:
+- Always add buff parameter to .next_to() with value >= 0.7
+- Position titles at .to_edge(UP, buff=0.5) or .to_corner(UL, buff=0.5)
+- Keep text concise (< 60 characters per line)
+- Group related objects with VGroup and use .arrange() for consistent spacing
+- Test that no elements overlap by using proper positioning
 
-Return ONLY the Python code, no explanations."""
+Return ONLY the Python code, no explanations or markdown."""
     
     full_prompt = f"{system_prompt}\n\nUSER PROMPT: {prompt}\n\nGenerate complete Manim code:"
     

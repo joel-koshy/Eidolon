@@ -113,7 +113,7 @@ class MobjectVideoImprover:
         print("  Rendering video...")
         
         try:
-            cmd = ["manim", "-pql", str(self.script_path), self.scene_name]
+            cmd = ["manim", "-pqh", "--fps", "60", str(self.script_path), self.scene_name]
             
             print(f"  Running: {' '.join(cmd)}")
             
