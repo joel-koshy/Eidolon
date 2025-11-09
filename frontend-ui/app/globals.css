@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* EIDOLON - Arcane Tech Design System */
+@layer base {
+  :root {
+    /* Dark theme - True black with purple/blue accents */
+    --background: 218 23% 5%;  /* #080A0F */
+    --foreground: 0 0% 100%;   /* Pure white */
+    
+    /* Glass morphism effects */
+    --glass-bg: rgba(255, 255, 255, 0.02);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    
+    /* Accent colors - Purple and Blue */
+    --primary-purple: 258 90% 66%;  /* #8B5CF6 */
+    --primary-blue: 217 91% 60%;    /* #3B82F6 */
+    
+    /* Text hierarchy */
+    --text-primary: 0 0% 100%;      /* White headings */
+    --text-secondary: 0 0% 64%;     /* Gray body text */
+    --text-muted: 0 0% 40%;         /* Muted text */
+    
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-white/10;
+  }
+  
+  body {
+    @apply text-white;
+    background-color: #080A0F;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Remove default button styles */
+  button {
+    @apply focus:outline-none;
+  }
+}
