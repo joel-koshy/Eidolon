@@ -531,7 +531,16 @@ function GeneratorView({ navigateTo }: { navigateTo: (view: string) => void }) {
   const [prompt, setPrompt] = useState('');
   const [files, setFiles] = useState<File[]>([]);
   const [isDragging, setIsDragging] = useState(false);
+  const [allVideos, setAllVideos] = useState<any[]>([]);
   const addToQueue = useStore((state) => state.addToQueue);
+  const setCurrentVideoId = useStore((state) => state.setCurrentVideoId);
+  const queue = useStore((state) => state.queue);
+  
+  // Load all videos from queue (completed ones)
+  useEffect(() => {
+    const completed = queue.filter(item => item.status === 'complete' && item.videoId);
+    setAllVideos(completed);
+  }, [queue]);
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
@@ -675,6 +684,53 @@ function GeneratorView({ navigateTo }: { navigateTo: (view: string) => void }) {
             </span>
           </button>
         </div>
+
+        {/* Completed Videos Section */}
+        {allVideos.length > 0 && (
+          <div className="mt-16 space-y-8">
+            <div className="text-center space-y-4">
+              <h2 className="text-4xl font-bold text-white flex items-center justify-center gap-3">
+                <Film className="w-10 h-10 text-purple-400" />
+                Recently Completed
+              </h2>
+              <p className="text-gray-400 text-lg">Click any video to view it in full screen</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {allVideos.slice(0, 6).map((video) => (
+                <div
+                  key={video.id}
+                  className="glass-border glass-border-hover rounded-2xl overflow-hidden transition-all cursor-pointer group"
+                  onClick={() => {
+                    setCurrentVideoId(video.videoId);
+                    navigateTo('results');
+                  }}
+                >
+                  {/* Video Player */}
+                  <div className="aspect-video bg-black relative">
+                    <video
+                      src={getVideoUrl(video.videoId)}
+                      className="w-full h-full object-contain"
+                      controls
+                      onClick={(e) => e.stopPropagation()}
+                    />
+                  </div>
+
+                  {/* Video Info */}
+                  <div className="p-6 space-y-3">
+                    <p className="text-white font-medium line-clamp-2 group-hover:text-purple-400 transition-colors">
+                      {video.prompt}
+                    </p>
+                    <div className="flex items-center gap-2 text-sm text-gray-400">
+                      <CheckCircle className="w-4 h-4 text-purple-400" />
+                      <span>Rendered successfully</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
