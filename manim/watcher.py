@@ -14,15 +14,16 @@ VIDEOS_DIR.mkdir(parents=True, exist_ok=True)
 print("🎬 Manim watcher started — waiting for scripts...")
 
 while True:
-    for script_file in SCRIPTS_DIR.glob("*.py"):
+    for script_file in SCRIPTS_DIR.glob("*.txt"):
         job_id = script_file.stem
         output_file = VIDEOS_DIR / f"{job_id}.mp4"
+        prompt = script_file.read_text()
 
         if not output_file.exists():
             print(f"🌀 Rendering {script_file.name} ...")
             try:
-                # Call the render method
-                # Here for teammate
+                # Call the render method here
+                # use prompt as needed
                 
                 print(f"✅ Finished {job_id}, saved to {output_file}")
                 script_file.unlink(missing_ok=True)  # remove after rendering
