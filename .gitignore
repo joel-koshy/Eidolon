@@ -54,3 +54,4 @@ docker-compose.override.yml
 manim/.devcontainer/.onCreateCommandMarker
 manim/.devcontainer/.postCreateCommandMarker
 manim/.devcontainer/.updateContentCommandMarker
+bucketkey.json

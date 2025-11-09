@@ -17,6 +17,10 @@ RUN tlmgr update --self
 RUN tlmgr install scheme-small txfonts
 
 # 6. Install Python dependencies (as root)
-COPY . /manim/
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+# 7. Switch back to the default, non-privileged 'manim' user
+# This is a security best practice for the final running container
 CMD ["/bin/bash"]
 

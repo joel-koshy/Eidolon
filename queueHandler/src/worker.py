@@ -13,15 +13,10 @@ VIDEOS_DIR.mkdir(parents=True, exist_ok=True)
 def process_prompt(self, job_id: str, prompt: str):
     try:
         # Simulate processing time
-        manim_code = f""
         print(f"Processing job {job_id}: {prompt}")
 
-        script_path = SCRIPTS_DIR / f"{job_id}.py"
-        script_path.write_text(manim_code)
-
-        # Save the Manim script for the renderer to pick up
-        script_path.write_text(manim_code)
-
+        script_path = SCRIPTS_DIR / f"{job_id}.txt"
+        script_path.write_text(prompt)
         result_path = f"/videos/{job_id}.mp4"
         return {"status": "completed", "video_path": result_path}
     except Exception as e:
