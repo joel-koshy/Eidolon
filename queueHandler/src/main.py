@@ -30,14 +30,15 @@ def root():
     return {"status": "Eidolon Queue Handler running", "version": "1.0.0"}
 
 @app.post("/api/generate-video")
-def generate(prompt: str = Form(...), files: List[UploadFile] = File(default=[])):
+def generate(id:str = Form(...), prompt: str = Form(...), files: List[UploadFile] = File(default=[])):
     print("Received generate request:", prompt)
     job_id = str(uuid4())
     jobs[job_id] = {
         "status": "queued",
         "progress": 0,
         "message": "Added to queue",
-        "prompt": prompt
+        "prompt": prompt, 
+        "id": id
     }
 
     # TODO: Handle file uploads if needed
