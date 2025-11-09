@@ -1,0 +1,79 @@
+The Krebs Cycle, also known as the Citric Acid Cycle, is a fundamental process in cellular respiration.
+
+Let's explore what makes it so important.
+
+So, what exactly *is* the Krebs Cycle?
+
+Well, it's the central metabolic pathway in cellular respiration, taking place within the mitochondrial matrix. Its primary job? To complete the oxidation of glucose, that process that started earlier. Importantly, it churns out ATP, NADH, and FADH₂, all crucial for energy production.
+
+Now, let's get an overview of what goes in and what comes out.
+
+On the input side, we have Acetyl-CoA, a two-carbon molecule, along with three molecules of NAD⁺, one of FAD, and one of ADP plus inorganic phosphate. These feed into the cycle.
+
+And what do we get out of it?
+
+For each cycle, we produce two molecules of carbon dioxide, three of NADH, one of FADH₂, and either one ATP or one GTP, which is essentially energetically equivalent to ATP.
+
+Alright, let's dive into the individual steps of the cycle.
+
+The first step involves the formation of citrate. Acetyl-CoA, with its two carbons, combines with oxaloacetate, a four-carbon molecule, to produce citrate, which has six carbons. Coenzyme A is also released in this process.
+
+The enzyme that facilitates this crucial step is citrate synthase.
+
+Visually, we can represent Acetyl-CoA in a box and oxaloacetate, combining them. The result? Citrate.
+
+Next, we have an isomerization. This is where citrate, still with six carbons, is converted into isocitrate, also with six carbons. Essentially, it's a molecular rearrangement.
+
+The enzyme driving this reaction is called aconitase. This step involves a rearrangement of the hydroxyl group position.
+
+Now, we move on to the first oxidative decarboxylation. Isocitrate, still our six-carbon molecule, along with NAD⁺, is converted into alpha-ketoglutarate, which has five carbons. In this step, we also release carbon dioxide and produce NADH.
+
+The enzyme at play here is isocitrate dehydrogenase.
+
+A couple of key products to note: this is the first time carbon dioxide is released during the cycle, and also the first time NADH is produced.
+
+Step four is the second oxidative decarboxylation. Alpha-ketoglutarate, the five-carbon molecule, combines with NAD⁺ and Coenzyme A to form succinyl-CoA, a four-carbon molecule, releasing carbon dioxide and generating NADH in the process.
+
+This reaction is catalyzed by the alpha-ketoglutarate dehydrogenase complex.
+
+Again, note that we're releasing another molecule of carbon dioxide and producing another molecule of NADH.
+
+In step five, we see substrate-level phosphorylation. Succinyl-CoA reacts with GDP and inorganic phosphate to produce succinate, GTP, and coenzyme A.
+
+The enzyme responsible is succinyl-CoA synthetase.
+
+Remember, GTP is essentially equivalent to ATP in terms of energy currency.
+
+Now comes an oxidation step. Succinate reacts with FAD to produce fumarate and FADH₂.
+
+This reaction is facilitated by the enzyme succinate dehydrogenase.
+
+Notice that in this step, we are producing FADH₂, *not* NADH.
+
+Next up, hydration. Fumarate combines with water to produce malate.
+
+The enzyme here is fumarase. This step involves the addition of water across the double bond of fumarate.
+
+Finally, the last oxidation step. Malate reacts with NAD⁺ to regenerate oxaloacetate, and produces NADH.
+
+This reaction is catalyzed by the enzyme malate dehydrogenase.
+
+This step produces another molecule of NADH! Importantly, it also regenerates oxaloacetate, which is necessary to keep the cycle running!
+
+So, what's the overall energy yield from one cycle?
+
+We get three molecules of NADH, which will eventually yield about 7.5 ATP through the electron transport chain. We also get one molecule of FADH₂, which will produce about 1.5 ATP through the same process. And, we get one GTP or ATP directly, which gives us another ATP.
+
+Adding it all up, we're looking at about 10 ATP per Acetyl-CoA that enters the cycle.
+
+So, let's recap the key takeaways from the Krebs Cycle.
+
+First, it completes the oxidation of glucose, building on what started in glycolysis. Remember, each glucose molecule produces two Acetyl-CoA molecules, meaning the cycle runs twice per glucose.
+
+Critically, the cycle generates electron carriers like NADH and FADH₂, which are essential for the electron transport chain, the final stage of aerobic respiration.
+
+It releases two molecules of carbon dioxide per cycle, representing a carbon waste product.
+
+And, the Krebs Cycle isn't just about sugars; it's a central hub, connecting the metabolism of carbohydrates, fats, and proteins.
+
+In short: Glucose is broken down into Acetyl-CoA, which feeds into the Krebs Cycle, ultimately yielding energy!
