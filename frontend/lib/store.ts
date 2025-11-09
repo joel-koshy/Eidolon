@@ -75,6 +75,8 @@ export const useStore = create<Store>((set) => ({
     set((state) => ({
       queue: state.queue.filter((item) => item.id !== id),
     })),
+    //@ts-ignore
+      setQueue: (newQueue) => set({ queue: newQueue }),
   
   // Current video
   currentVideoId: null,

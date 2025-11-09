@@ -101,3 +101,39 @@ export async function createVideoPrompt(promptData: createVideoPromptInput) {
   // because we are caching the connection. If you weren't caching,
   // you would use a try...finally block to ensure client.close() is called.
 }
+
+export async function getLatestPendingVideos(limit = 10) {
+  let db;
+
+  try {
+    ({ db } = await connectToDb());
+  } catch (error) {
+    console.error("Database connection error:", error);
+    return {
+      success: false,
+      error: "Failed to connect to the database."
+    };
+  }
+
+  try {
+    const collection = db.collection("videoPrompts");
+
+    const pendingDocs = await collection
+      .find({ status: "pending" })
+      .sort({ createdAt: -1 }) // newest first
+      .limit(limit)
+      .toArray();
+
+    return {
+      success: true,
+      data: pendingDocs
+    };
+  } catch (error) {
+    console.error("Error fetching pending videos:", error);
+    return {
+      success: false,
+      error: "Failed to fetch pending videos."
+    };
+  }
+}
+

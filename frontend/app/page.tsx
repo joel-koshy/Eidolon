@@ -146,6 +146,41 @@ function Navbar({ navigateTo }: { navigateTo: (view: string) => void }) {
   const logout = useStore((state) => state.logout);
   const user = useStore((state) => state.user);
 
+  const setQueue = useStore((state) => state.setQueue);
+
+  useEffect(() => {
+    async function fetchPendingVideos() {
+      try {
+        const response = await fetch("/api/queued-prompts", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          console.error("Failed to fetch pending videos:", response.statusText);
+          return;
+        }
+
+        const data = await response.json();
+
+        if (data.success && Array.isArray(data.data)) {
+          // Update the Zustand store
+          setQueue(data.data);
+          console.log("Queue initialized with pending videos:", data.data);
+        } else {
+          console.error("Unexpected data format:", data);
+        }
+      } catch (err) {
+        console.error("Error fetching pending videos:", err);
+      }
+    }
+
+    fetchPendingVideos();
+    // Cleanup on unmount
+  }, [setQueue]);
+
   // Poll queue status
   useEffect(() => {
     const interval = setInterval(async () => {
