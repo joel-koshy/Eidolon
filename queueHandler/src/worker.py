@@ -41,14 +41,24 @@ REQUIREMENTS:
 7. Make it educational and visually appealing
 8. Use colors effectively (BLUE, RED, GREEN, YELLOW, PURPLE, etc.)
 
-VALID METHODS:
-- .move_to(ORIGIN), .shift(UP), .shift(DOWN * 2)
-- .next_to(obj, DOWN, buff=0.5)
-- .to_edge(UP), .to_corner(UL)
+VALID MANIM METHODS:
+- Positioning: .move_to(ORIGIN), .shift(UP), .shift(DOWN * 2), .next_to(obj, DOWN, buff=0.5), .to_edge(UP), .to_corner(UL)
+- Text/Math: Text("Hello"), MathTex(r"\frac{1}{2}") — ALWAYS use raw strings (r"") for MathTex
+- Axes: axes = Axes(x_range=[0, 10], y_range=[0, 10])
+- Plotting: axes.plot(lambda x: np.sin(x), color=BLUE)
+- Labels: axes.get_axis_labels(x_label="x", y_label="y")
 
 DO NOT USE:
-- .to_center() (doesn't exist)
+- .to_center() (doesn't exist, use .move_to(ORIGIN))
 - Non-numeric buffs (use buff=0.5, buff=1.0, etc.)
+- axes.x_axis.number_to_value (doesn't exist)
+- Invalid NumberLine attributes
+
+IMPORTANT:
+- Keep animations simple and working
+- Test common operations only
+- Don't try to customize axis labels beyond get_axis_labels()
+- Use standard Manim community API
 
 Return ONLY the Python code, no explanations."""
     
